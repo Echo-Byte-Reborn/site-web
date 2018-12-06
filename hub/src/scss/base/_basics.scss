@@ -1,0 +1,65 @@
+
+  /*
+   BASIC STYLES
+  */
+
+  html, body
+  {
+    height: 100%;
+    font-size: $font-size;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body{
+    font-family:$font-main;
+    font-size: $font-size;
+    margin:0;
+    padding: 0;
+    width: 100%;
+    color: $color-text;
+    background: $color-bg;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: (antialiased);
+    line-height: normal;
+    //min-width: 330px;
+    height:100%;
+  }
+
+  *,
+  *:before,
+  *:after{
+    box-sizing :border-box;
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  h2,h3,p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  strong{
+    font-weight: 700;
+  }
+
+  a{
+    color: $color-text;
+    text-decoration: none;
+    cursor:pointer;
+  }
+
+  br{
+    opacity: 0;
+  }
+
+
+
+
+
+
+
+
