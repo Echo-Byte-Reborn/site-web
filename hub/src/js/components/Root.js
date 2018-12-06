@@ -2,7 +2,7 @@
 
 class Root{
     constructor(){
-      this.defaultRoot = ""
+      this.defaultRoot = "/home/albasheep/Documents/site-web"
     }
 
 

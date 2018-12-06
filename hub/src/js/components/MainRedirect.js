@@ -5,13 +5,14 @@ class MainRedirect{
         this.$apliTel = document.querySelector('.apliTel a');
         this.$apliSoutien = document.querySelector('.apliSoutien a');
         this.root = new Root();
+
         this.bindEvents();
         this.init();
     }
 
     init(){
-        this.$apliTel.href = this.root.defaultRoot+"https://stackoverflow.com/questions/1232793/javascript-set-img-src"
-        this.$apliSoutien.href =this.root.defaultRoot+"https://stackoverflow.com/questions/1232793/javascript-set-img-src"
+        this.$apliTel.href = this.root.defaultRoot+"/apli-telephone/dist/index.html"
+        this.$apliSoutien.href =this.root.defaultRoot+"/vue/dist/index.html"
     }
 
     bindEvents(){
