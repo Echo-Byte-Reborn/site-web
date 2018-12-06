@@ -10,21 +10,23 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <section class="page">
+        <h1> application téléphone de santé</h1>
+        <p>BPM : <div class="bpm"></div></p>
+        <p>KM : <div class="kmFait"></div></p>
+    </section>
 
-    <h1> application téléphone de santé</h1>
-    <p>BPM : <div class="bpm"></div></p>
-    <p>KM : <div class="kmFait"></div></p>
 
-    
     <h1> application téléphone de survie </h1>
     <p>Temps : <div class="Temps" id="log"></div></p>
     <p>Température : <div class="temperature"></div></p>
     <p>Nombre de kilomètres parcourus : <div class="nbKmDistance"></div></p>
 
     <h1> News </h1>
-    <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
-    <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
-
+    <div class="envoieNews" visible="false">
+        <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
+        <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
+    </div>
 
 
     <iframe
