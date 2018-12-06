@@ -15,7 +15,8 @@ class News{
     bindEvents(){
         this.$button.addEventListener("click",function(){
             this.news=document.querySelector('.textBoxNews').value;
-            console.log(this.news);
+            xhttp.open("POST", "http://51.68.87.119/message", {"message":this.news});
+            xhttp.send();
         });
     }
 
