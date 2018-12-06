@@ -24,4 +24,3 @@ Durant la nuit nous avons réalisé :
 
 [version]: https://flat.badgen.net/badge/release/v0.0.1/green
 [equipe]: https://flat.badgen.net/badge/equipe/echo%20byte%20reborn/blue
-[equipe]: https://flat.badgen.net/badge/equipe/echo%20byte%20reborn/blue
