@@ -24,4 +24,8 @@ Dans le cadre de de [la nuit de l'info 2018](https://www.nuitdelinfo.com/), nous
 
 
 [version]: https://flat.badgen.net/badge/release/v0.0.1/green
+<<<<<<< HEAD
 [equipe]: https://flat.badgen.net/badge/equipe/echo%20byte%20reborn/blue
+=======
+[equipe]: https://flat.badgen.net/badge/equipe/echo%20byte%20reborn/blue
+>>>>>>> 055c75785d488bde5002560fbf70ce2c118b4bbf

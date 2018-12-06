@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Hello World !!!</h1>
-    <button @click="route">Route</button>
+    <v-btn @click="route" color="primary">Route</v-btn>
     <square></square>
     <square startAt="5"></square>
     <square :startAt="41"></square>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Square from './Square.vue'
+import Square from '@/components/Square'
 
 export default {
   name: 'Home',
