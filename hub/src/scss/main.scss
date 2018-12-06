@@ -20,6 +20,32 @@
 	background-position:  top;
 	background-size:  cover;
 	position:  relative;
+	filter: brightness(60%);
+}
+.title{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: $white;
+	text-transform: uppercase;
+	font-size: 4em;
+	text-align: center;
+}
+.content{
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	.btn{
+		padding: 10px 20px;
+		border: solid 3px $white;
+		margin: 20px 0;
+		a{
+			color: $white;
+		}
+	}
 }
 
 
