@@ -1,4 +1,4 @@
-import Root from "../components/Root";
+
 
 class Acceleration{
     constructor(){
