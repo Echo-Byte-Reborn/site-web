@@ -2,6 +2,7 @@
 import Example from './components/Example'
 import {getBrowser} from './utils/environment'
 
+
 const App = {
 
     init(){
