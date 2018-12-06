@@ -42,8 +42,16 @@
 		padding: 10px 20px;
 		border: solid 3px $white;
 		margin: 20px 0;
+		transition: ease-in-out all 0.5s;
+		&:hover{
+			background-color: $white;
+			a{
+				color: $black;
+			}
+		}
 		a{
 			color: $white;
+			transition: ease-in-out all 0.5s;
 		}
 	}
 }
