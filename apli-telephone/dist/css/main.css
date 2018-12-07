@@ -157,6 +157,9 @@ body {
     color: #1c1c1c;
     background-color: #FFF; }
 
+.observablehq:nth-of-type(2) {
+  display: block; }
+
 .observablehq {
   display: none; }
 
