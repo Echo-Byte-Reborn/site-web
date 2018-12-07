@@ -23,6 +23,7 @@ const actions = {
           try {
             $.ajax('http://51.68.87.119:8080/bpm/last', {
               method: 'GET',
+              credentials: 'same-origin',
               success: res => {
                 commit(types.SET_LAST_BPM, res)
               },
