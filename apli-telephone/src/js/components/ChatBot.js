@@ -2,7 +2,7 @@ class Chatbot {
     constructor() {
         this.$button = document.querySelector(".buttonChatbot");
         this.$chatbot = document.querySelector(".chatbot");
-        this.isopen = true
+        this.isopen = false
 
 
         this.bindEvents();
@@ -10,6 +10,8 @@ class Chatbot {
     }
 
     init() {
+        this.$chatbot.classList.add("hide")
+
     }
 
     bindEvents() {

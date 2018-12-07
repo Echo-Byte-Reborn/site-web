@@ -8,32 +8,42 @@
 
     <title>News</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
-<body>
+
+<body class="body">
+    
     <div class="slider">
         <div class="page">
             <h1>santé</h1>
-            <p>BPM : <div class="bpm"></div></p>
-            <p>KM : <div class="kmFait"></div></p>
+            <img class="cardio" src="./static/img/cardio.gif" alt="">
+            <p><div class="bpm"></div></p>
+            <p class="center">bpm</p>
+            <p><div class="kmFait">2,7</div></p>
+            <p class="center">km</p>
         </div>
         <div class="page">
             <h1>survie</h1>
-            <p>Temps : <div class="Temps" id="log"></div></p>
-            <p>Température : <div class="temperature"></div></p>
-            <p>Nombre de kilomètres parcourus : <div class="nbKmDistance"></div></p>
+            <p>Temps : <div class="Temps" id="log">Soleil</div></p>
+            <p>Température : <div class="temperature">31°</div></p>
+            <p>Nbre de km parcourus : <div class="nbKmDistance">27,3</div></p>
         </div>
-         <div class="page">
+         <div class="page mapInteractive">
+            
+             <script type=module>
+                 import {Runtime, Inspector} from "https://unpkg.com/@observablehq/notebook-runtime@1?module";
+                 import notebook from "./static/data/0268b2eb90be370b.js";
 
+                 Runtime.load(notebook, Inspector.into(document.querySelector(".mapInteractive")));
+             </script>
         </div>
     </div>
 
-
     <div class="page">
-        <div class="envoieNews" visible="false">
+        <div class="envoieNews" style="opacity: 1">
             <h1> News </h1>
             <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
             <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
@@ -41,6 +51,7 @@
     </div>
 <div class="buttonChatbot">X</div>
 
+<div class="btn-night">O</div>
 
     <iframe class="chatbot"
             allow="microphone;"
@@ -51,10 +62,18 @@
 	<script type="text/javascript" src="js/main.js"></script>
     <script>
         $(document).ready(function(){
-          $('.slider').slick({
-            arrows: false,
-          });
+            $('.slider').slick({
+                arrows: false,
+            });
+
+
+            $('.btn-night').click(function (){
+             $('.body').toggleClass('night')   
+          })
+          
         });
+        
     </script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
