@@ -1,7 +1,9 @@
 
 import News from './components/News'
+import Example from './components/Example'
 import {getBrowser} from './utils/environment'
 import Acceleration from './components/Acceleration'
+import DataPerso from './components/DataPerso';
 
 
 const App = {
@@ -18,6 +20,7 @@ const App = {
         new Example();
         new Acceleration ();
         new News();
+        new DataPerso();
     },
 
     bindEvent(){
