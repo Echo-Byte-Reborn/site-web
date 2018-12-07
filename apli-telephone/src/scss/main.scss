@@ -11,6 +11,14 @@
 @import "components/chatbot";
 
 //component
+
+body{
+	background-color: $blue;
+	color: $white;
+}
+.center{
+	text-align: center;
+}
 .slider {
    height: calc(100vh - 100px);
 }
@@ -36,7 +44,7 @@
 	}
 	.bpm{
 		text-align: center;
-		font-size: 2em;
+		font-size: 3em;
 	}
 }
 
