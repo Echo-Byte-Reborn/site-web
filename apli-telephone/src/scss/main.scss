@@ -13,8 +13,8 @@
 //component
 
 body{
-	background-color: $blue;
-	color: $white;
+	background-color: $red;
+	color: black;
 }
 .center{
 	text-align: center;
@@ -77,13 +77,14 @@ body{
   display : none;
 }
 
-.observablehq:nth-of-type(5){
+.observablehq:nth-of-type(4){
 	display : block;
 }.observablehq:nth-of-type(2){
 	 display : block;
  }
 .night {
 	background-color: $black;
+	color : white;
 	.page{
 		h1{
 			text-align: center;
