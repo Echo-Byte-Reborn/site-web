@@ -6,16 +6,26 @@ class News{
         this.$textbox = document.querySelector('.textBoxNews');
         this.news ="";
         this.$envoieNews = document.querySelector('.envoieNews');
-        this.$envoieNews.style.opacity='0';
+        verifMort=true;
+        document.querySelector('.envoieNews').style.opacity='1';
+        setInterval(function(){
+            if(verifMort==true)
+            {
+                $.post("http://51.68.87.119:8080/message",{"message":"ALERT IL EST MORT"},function(data){console.log(data)});
+                this.$envoieNews.style.opacity='0';
+            }
+        },300000)
         var myVar = setInterval(function(){
                                     verifMort=true;
                                     document.querySelector('.envoieNews').style.opacity='1';
                                     setInterval(function(){
                                         if(verifMort==true)
-                                        $.post("http://51.68.87.119:8080/message",{"message":"ALERT IL EST MORT"},function(data){console.log(data)});
-                                        this.$envoieNews.style.opacity='0';
-                                    },300000)
-                                },3600000);
+                                        {
+                                            $.post("http://51.68.87.119:8080/message",{"message":"ALERT IL EST MORT"},function(data){console.log(data)});
+                                            this.$envoieNews.style.opacity='1';
+                                        }
+                                    },300000);
+                                },600000);
         this.bindEvents();
         this.init();
     }
