@@ -39,7 +39,39 @@
 
                  Runtime.load(notebook, Inspector.into(document.querySelector(".mapInteractive")));
              </script>
+
         </div>
+        <div class="page">
+        <article>
+            <p>Carte interactive de la Namibie.
+            <p> Cette carte est réalisée en canvas, et met en valeur les centres de soins et les points d'eau.</p>
+            <p>  Cette carte doit permettre à Stéphane Lévin et son équipe de trouver le centre médical (health site), ou point d'eau (water site), le plus proche en cas de besoin.</p>
+
+            <p> Les sites médicaux ont été receuillis ici : https://data.humdata.org/dataset/namibia-healthsites</p>
+            <p> Les points d'eau ont été recuillis à la main sur Google Maps.</p>
+        </article>
+        </div>
+        <div class="page">
+            <article>
+            <ul> Nous sucitons l'interaction de l'utilisateur à l'aide de la souris :</ul>
+
+            <li>- Le survol, qui simule la position de l'équipe afin de déterminer le point le plus proche, sa distance, ainsi que la région dans laquelle l'équipe se trouve.</li>
+
+            <li>- Le clic, qui permet de changer le type d'affichage (également possible via radio-buttons sous le canvas)</li>
+
+
+        </article>
+        </div>
+        <div class="page">
+            <p>  Sinon, sur telephone, en restant appuyé on défini notre position actuelle (a terme, nous pourrons récupérer les données de géolocalisation).</p>
+
+            <p>Afin de déterminer les points les plus proches, nous avions commencé par utiliser un diagramme de Voronoi. Nous avons finalement changé de méthode, mais nous avons gardé son affichage car il permet de montrer la densité des points sur la carte, et peut dispenser de l'interaction de l'utilisateur (et permettre à Stéphane de garder toute sa concentration).</p>
+
+            <p> Le code est déployé sur Observable ici : https://beta.observablehq.com/d/0268b2eb90be370b</p>
+
+            <p>- Steeve Ciminera & Romain Sanchez</p>
+        </div>
+
     </div>
 
     <div class="page">

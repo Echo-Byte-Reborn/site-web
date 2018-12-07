@@ -1,11 +1,11 @@
 // URL: https://beta.observablehq.com/d/0268b2eb90be370b
 // Title: Namibia Map (NdI 2018 - Echo Byte Reborn)
 // Author: Stev (@tarte0)
-// Version: 503
+// Version: 516
 // Runtime version: 1
 
 const m0 = {
-    id: "0268b2eb90be370b@503",
+    id: "0268b2eb90be370b@516",
     variables: [
         {
             inputs: ["md"],
@@ -34,6 +34,14 @@ const m0 = {
                         false
                     );
 
+                    canvas.addEventListener(
+                        "mousedown",
+                        function(e) {
+                            inputs.mousePos = [e.offsetX, e.offsetY];
+                        },
+                        false
+                    );
+
                     const renderNumber = 4
 
                     canvas.addEventListener(
@@ -44,6 +52,7 @@ const m0 = {
                         false
                     );
 
+                    //On applique une transformation a nos points pour les afficher
                     const allPoints = []
                     namibiaGeoFeatures.forEach(feature => {
                         let d = feature.geometry;
@@ -52,8 +61,6 @@ const m0 = {
 
                     const scaleInfo = scale(allPoints, w-margin, h-margin);
 
-
-
                     while(true){
                         ctx.font = `${w/20}px Arial`;
                         ctx.fillStyle = "white";
@@ -61,6 +68,7 @@ const m0 = {
 
                         ctx.strokeStyle = "rbga(0,0,0,0.75)";
 
+                        //on dessine nos régions
                         namibiaGeoFeatures.forEach((feature,i) => {
                             let d = feature.geometry;
 
@@ -70,11 +78,13 @@ const m0 = {
 
                         })
 
+                        //on récupere la region que l'on survole
                         const selectedFeature = namibiaGeoFeatures.find(feature => {
                             let d = feature.geometry;
                             return pointInPolygon(transformWithScale(d, w, h, margin, scaleInfo), inputs.mousePos)
                         })
 
+                        //si on survole une région, on affiche son nom, et on la met en gras
                         if(selectedFeature) {
 
                             $0.value = selectedFeature
@@ -89,13 +99,15 @@ const m0 = {
                             ctx.fillText(selectedFeature.properties.name.replace(/Region/, ''), inputs.mousePos[0]+10, inputs.mousePos[1]);
                         }
 
-                        let closestSite = [0,0];
                         ctx.lineWidth = 1;
+
+                        let closestSite = [0,0];
                         let transformedSites = [];
                         let delaunay;
                         let voronoi;
                         let closestSiteDistance;
 
+                        //quand l'utilisateur clique on change de type d'affichage
                         switch(inputs.clicks){
                             case 0:
 
@@ -104,6 +116,7 @@ const m0 = {
                                 ctx.fillStyle = "grey";
                                 ctx.fillText('Health sites', 20, h-15);
 
+                                //affichage des centres medicaux
                                 healthsites.forEach((p,i) => {
                                     ctx.fillStyle = 'rgba(255,0,0,0.5)';
 
@@ -117,6 +130,7 @@ const m0 = {
                                     ctx.fill();
                                 })
 
+                                //calcul et affichage du point le plus proche
                                 closestSite = closestPoint(inputs.mousePos, transformedSites);
                                 closestSiteDistance = distance(inputs.mousePos, closestSite);
 
@@ -128,9 +142,12 @@ const m0 = {
                                 ctx.stroke();
                                 ctx.closePath();
 
+                                //affichage de la distance entre le point et la souris
                                 ctx.font = "10px Arial";
                                 ctx.fillStyle = "red";
-                                ctx.fillText(Number(closestSiteDistance).toFixed(2), closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2, closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
+                                ctx.fillText(Number(closestSiteDistance).toFixed(2),
+                                    closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2,
+                                    closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
 
                                 ctx.strokeStyle = "black";
 
@@ -142,6 +159,7 @@ const m0 = {
 
                                 transformedSites = [];
 
+                                //affichage des centres medicaux
                                 healthsites.forEach((p,i) => {
                                     ctx.fillStyle = 'rgba(255,0,0,0.5)';
 
@@ -154,6 +172,7 @@ const m0 = {
                                     ctx.fill();
                                 })
 
+                                //on genere un diagrame de voronoi
                                 delaunay = new d3Delaunay.Delaunay.from(transformedSites);
                                 voronoi = delaunay.voronoi([0, 0, w, h]);
 
@@ -166,6 +185,7 @@ const m0 = {
 
                                 ctx.lineWidth = 1;
 
+                                //calcul et affichage du point le plus proche
                                 closestSite = closestPoint(inputs.mousePos, transformedSites);
                                 closestSiteDistance = distance(inputs.mousePos, closestSite);
 
@@ -177,6 +197,7 @@ const m0 = {
                                 ctx.stroke();
                                 ctx.closePath();
 
+                                //affichage de la distance entre le point et la souris
                                 ctx.font = "10px Arial";
                                 ctx.fillStyle = "red";
                                 ctx.fillText(Number(closestSiteDistance).toFixed(2),
@@ -194,6 +215,7 @@ const m0 = {
                                 ctx.fillStyle = "grey";
                                 ctx.fillText('Water sites', 20, h-15);
 
+                                //affichage des points d'eau
                                 waterSites.forEach((p,i) => {
                                     ctx.fillStyle = 'rgba(0,75,255,0.5)';
 
@@ -206,6 +228,7 @@ const m0 = {
                                     ctx.fill();
                                 })
 
+                                //calcul et affichage du point le plus proche
                                 closestSite = closestPoint(inputs.mousePos, transformedSites);
                                 closestSiteDistance = distance(inputs.mousePos, closestSite);
 
@@ -217,9 +240,12 @@ const m0 = {
                                 ctx.stroke();
                                 ctx.closePath();
 
+                                //affichage de la distance entre le point et la souris
                                 ctx.font = "10px Arial";
                                 ctx.fillStyle = "blue";
-                                ctx.fillText(Number(closestSiteDistance).toFixed(2), closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2, closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
+                                ctx.fillText(Number(closestSiteDistance).toFixed(2),
+                                    closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2,
+                                    closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
 
                                 ctx.strokeStyle = "black";
                                 break;
@@ -231,6 +257,7 @@ const m0 = {
 
                                 transformedSites = [];
 
+                                //affichage des points d'eau
                                 waterSites.forEach((p,i) => {
                                     ctx.fillStyle = 'rgba(0,75,255,0.5)';
 
@@ -243,6 +270,7 @@ const m0 = {
                                     ctx.fill();
                                 })
 
+                                //on genere un diagrame de voronoi
                                 delaunay = new d3Delaunay.Delaunay.from(transformedSites);
                                 voronoi = delaunay.voronoi([0, 0, w, h]);
 
@@ -255,6 +283,7 @@ const m0 = {
 
                                 ctx.lineWidth = 1;
 
+                                //calcul et affichage du point le plus proche
                                 closestSite = closestPoint(inputs.mousePos, transformedSites);
                                 closestSiteDistance = distance(inputs.mousePos, closestSite);
 
@@ -266,23 +295,21 @@ const m0 = {
                                 ctx.stroke();
                                 ctx.closePath();
 
+                                //affichage de la distance entre le point et la souris
                                 ctx.font = "10px Arial";
                                 ctx.fillStyle = "blue";
-                                ctx.fillText(Number(closestSiteDistance).toFixed(2), closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2, closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
+                                ctx.fillText(Number(closestSiteDistance).toFixed(2),
+                                    closestSite[0]+(inputs.mousePos[0]-closestSite[0])/2,
+                                    closestSite[1]+(inputs.mousePos[1]-closestSite[1])/2);
 
                                 ctx.strokeStyle = "black";
                                 break;
                         }
 
-
-
                         yield canvas;
                     }
                 }
             )
-        },
-        {
-
         },
         {
 
@@ -332,16 +359,6 @@ const m0 = {
             name: "margin",
             value: (function(){return(
                 20
-            )})
-        },
-        {
-
-        },
-        {
-            name: "color",
-            inputs: ["d3"],
-            value: (function(d3){return(
-                d3.interpolateOranges
             )})
         },
         {
@@ -541,12 +558,6 @@ const m0 = {
 
         },
         {
-
-        },
-        {
-
-        },
-        {
             name: "namibiaGeoJson",
             inputs: ["d3","namibiaGeoJsonURL"],
             value: (function(d3,namibiaGeoJsonURL){return(
@@ -685,7 +696,7 @@ Defi 'Canvas à tout va!'
 
 Par Steeve Ciminera et Romain Sanchez
   
-Merci à Zack Ciminera pour le support mental
+Merci à Zack Ciminera pour le support
 `
             )})
         }
@@ -824,7 +835,7 @@ const m1 = {
 };
 
 const notebook = {
-    id: "0268b2eb90be370b@503",
+    id: "0268b2eb90be370b@516",
     modules: [m0,m1]
 };
 
