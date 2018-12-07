@@ -17,6 +17,7 @@ const actions = {
       try {
         $.ajax('http://51.68.87.119:8080/message', {
           method: 'GET',
+          credentials: 'same-origin',
           success: res => {
             commit(types.SET_MESSAGES, res.data)
           },
