@@ -14,7 +14,7 @@
 
 body{
 	background-color: $red;
-	color: $white;
+	color: black;
 }
 .center{
 	text-align: center;
@@ -84,6 +84,7 @@ body{
  }
 .night {
 	background-color: $black;
+	color : white;
 	.page{
 		h1{
 			text-align: center;
