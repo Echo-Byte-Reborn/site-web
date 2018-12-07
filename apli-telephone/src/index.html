@@ -16,22 +16,26 @@
 <body>
     <div class="slider">
         <div class="page">
-            <h1> application téléphone de santé</h1>
+            <h1>santé</h1>
             <p><div class="cardiogramme"><img src="../static/img/cardio.gif" width="200" height="100"></div></p>
             <p>BPM : <div class="bpm"></div></p>
             <p>KM : <div class="kmFait"></div></p>
         </div>
         <div class="page">
-            <h1> application téléphone de survie </h1>
+            <h1>survie</h1>
             <p>Temps : <div class="Temps" id="log"></div></p>
             <p>Température : <div class="temperature"></div></p>
             <p>Nombre de kilomètres parcourus : <div class="nbKmDistance"></div></p>
         </div>
+        <!-- <div class="page">
+            ici
+        </div> -->
     </div>
 
+
     <div class="page">
-        <h1> News </h1>
         <div class="envoieNews" visible="false">
+            <h1> News </h1>
             <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
             <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
         </div>
@@ -48,7 +52,7 @@
     <script>
         $(document).ready(function(){
           $('.slider').slick({
-            
+            arrows: false,
           });
         });
     </script>
