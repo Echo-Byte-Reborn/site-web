@@ -1,5 +1,14 @@
 <template>
   <v-app id="app" :dark="dark">
+      <v-btn
+        :dark="!dark"
+        :light="dark"
+        fixed
+        bottom
+        right
+        @click="switchMode"
+        v-html="text"
+      ></v-btn>
     <router-view/>
   </v-app>
 </template>
@@ -9,7 +18,15 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
+  methods: {
+    switchMode () {
+      this.$store.dispatch('setDrak', !this.dark)
+    }
+  },
   computed: {
+    text () {
+      return this.dark ? 'jour' : 'nuit'
+    },
     ...mapGetters({
       dark: 'getDark'
     })
@@ -25,4 +42,3 @@ export default {
 }
 
 </style>
-  
