@@ -39,5 +39,4 @@ const App = {
 
 };
 
-
 App.init();
