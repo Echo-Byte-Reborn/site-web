@@ -3,6 +3,7 @@ import App from '@/App'
 import router from '@/router'
 import Bootstrap from '@/bootstrap'
 import Vuetify from 'vuetify'
+import moment from 'moment'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-components-web/dist/material-components-web.css'
@@ -20,6 +21,8 @@ Vue.use(Vuetify, {
 
 Vue.config.productionTip = false
 Vue.use(Bootstrap)
+
+moment.locale('fr')
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <h1>Page 2</h1>
-    <v-btn @click="back" color="matRed">Back</v-btn>
-  </div>
+  <v-layout row>
+    <v-flex xs4 sm4 offset-sm9>
+      <messages></messages>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 
+import Messages from '@/components/Messages'
+
 export default {
-  name: 'OtherPage',
+  name: 'Dashboard',
   components: {
+    Messages
   },
   props: {
   },
   mounted () {
-    console.log('OtherPage mounted')
   },
   data () {
     return {
@@ -23,9 +26,6 @@ export default {
   watch: {
   },
   methods: {
-    back () {
-      this.$router.go(-1)
-    }
   },
   computed: {
   }
@@ -35,7 +35,7 @@ export default {
 <style scoped>
 
 h1 {
-  color: green;
+  color: red;
   text-align: center;
 }
 
