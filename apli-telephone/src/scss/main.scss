@@ -70,15 +70,18 @@ body{
 		background-color: $white;
 	}
 }
-.observablehq:nth-of-type(2){
-  display : block;
-}
+
 
 
 .observablehq{
   display : none;
 }
 
+.observablehq:nth-of-type(5){
+	display : block;
+}.observablehq:nth-of-type(2){
+	 display : block;
+ }
 .night {
 	background-color: $black;
 	.page{

@@ -1,11 +1,11 @@
 // URL: https://beta.observablehq.com/d/0268b2eb90be370b
 // Title: Namibia Map (NdI 2018 - Echo Byte Reborn)
 // Author: Stev (@tarte0)
-// Version: 488
+// Version: 503
 // Runtime version: 1
 
 const m0 = {
-    id: "0268b2eb90be370b@488",
+    id: "0268b2eb90be370b@503",
     variables: [
         {
             inputs: ["md"],
@@ -285,11 +285,23 @@ const m0 = {
 
         },
         {
+
+        },
+        {
             name: "viewof displayType",
             inputs: ["radio"],
             value: (function(radio){return(
-                radio(["Health sites", "Health sites (Voronoi)",
-                    "Water sites", "Water sites (Voronoi)"].map((r,i) => ({label:r, value:i})))
+                radio({
+                    title: `Type d'affichage`,
+                    options: [
+                        { label: 'Health sites', value: '0' },
+                        { label: 'Health sites (Voronoi)', value: '1' },
+                        { label: 'Water sites', value: '2' },
+                        { label: 'Water sites (Voronoi)', value: '3' }
+
+                    ],
+                    value: '0'
+                })
             )})
         },
         {
@@ -670,6 +682,7 @@ Nuit de l'info 2018
 
 
 Defi 'Canvas à tout va!'
+
 Par Steeve Ciminera et Romain Sanchez
   
 Merci à Zack Ciminera pour le support mental
@@ -811,7 +824,7 @@ const m1 = {
 };
 
 const notebook = {
-    id: "0268b2eb90be370b@488",
+    id: "0268b2eb90be370b@503",
     modules: [m0,m1]
 };
 
