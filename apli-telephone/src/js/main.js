@@ -39,8 +39,4 @@ const App = {
 
 };
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 App.init();
