@@ -1,7 +1,7 @@
 hub/node_modules
 hub/dist
 apli-telephone/node_modules
-apli-telephone/dist
+apli-telephone/dist/*
 vue/node_modules
 
 .idea
