@@ -1,5 +1,4 @@
 
->>>>>>> master
 class Acceleration{
     constructor(){
         

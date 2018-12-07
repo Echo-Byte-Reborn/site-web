@@ -21,7 +21,7 @@ const App = {
         new Acceleration ();
         new Example();
         new Acceleration();
-        new Distance();
+        //new Distance();
         new News();
         new DataPerso();
         new ChatBot();
@@ -39,8 +39,5 @@ const App = {
 
 };
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 App.init();
