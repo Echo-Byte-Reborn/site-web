@@ -13,14 +13,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
-<body>
+<body class="body">
     <div class="slider">
         <div class="page">
             <h1>santé</h1>
             <img class="cardio" src="../static/img/cardio.gif" alt="">
             <p><div class="bpm"></div></p>
             <p class="center">bpm</p>
-            <p>KM : <div class="kmFait"></div></p>
+            <p><div class="kmFait">45.6</div></p>
+            <p class="center">km</p>
         </div>
         <div class="page">
             <h1>survie</h1>
@@ -41,6 +42,8 @@
     </div>
 <div class="buttonChatbot">X</div>
 
+<div class="btn-night">O</div>
+
     <iframe class="chatbot"
             allow="microphone;"
             width="350"
@@ -54,6 +57,16 @@
             arrows: false,
           });
         });
+    </script>
+    <script>
+        $(document).ready(function(){
+
+            $('.btn-night').click(function (){
+             $('.body').toggleClass('night')   
+          })
+          
+        });
+        
     </script>
 </body>
 </html>
