@@ -8,9 +8,27 @@
 
     <title>News</title>
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
+    <div class="slider">
+        <div class="page">
+            <h1> application téléphone de santé</h1>
+            <p>BPM : <div class="bpm"></div></p>
+            <p>KM : <div class="kmFait"></div></p>
+        </div>
+        <div class="page">
+            <h1> application téléphone de survie </h1>
+            <p>Temps : <div class="Temps" id="log"></div></p>
+            <p>Température : <div class="temperature"></div></p>
+            <p>Nombre de kilomètres parcourus : <div class="nbKmDistance"></div></p>
+        </div>
+    </div>
 
+<<<<<<< HEAD
     <h1> application téléphone de santé</h1>
     <p>BPM : <div class="bpm"></div></p>
     <p>KM : <div class="kmFait"></div></p>
@@ -25,7 +43,30 @@
     <h1> News </h1>
     <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
     <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
+=======
+    <div class="page">
+        <h1> News </h1>
+        <div class="envoieNews" visible="false">
+            <INPUT TYPE="text" NAME="input" VALUE="" CLASS="textBoxNews"/></BR>
+            <INPUT TYPE="button" NAME="bouton" VALUE="Contrôler" CLASS="buttonNews"/>
+        </div>
+    </div>
+<div class="buttonChatbot">X</div>
+>>>>>>> master
 
+    <iframe class="chatbot"
+            allow="microphone;"
+            width="350"
+            height="430"
+            src="https://console.dialogflow.com/api-client/demo/embedded/eab372df-9cad-4249-93a2-6a8394a0365d" style ="position : absolute;bottom: 0px;right: 0px;">
+    </iframe>
 	<script type="text/javascript" src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.slider').slick({
+            
+          });
+        });
+    </script>
 </body>
 </html>

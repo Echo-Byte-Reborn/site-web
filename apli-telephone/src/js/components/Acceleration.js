@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+ 
+
+>>>>>>> master
 class Acceleration{
     constructor(){
         

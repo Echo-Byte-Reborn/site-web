@@ -1,0 +1,17 @@
+.hide {
+  display: none;
+}
+
+.buttonChatbot {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position : absolute;
+  bottom: 10px;
+  right: 20px;
+  background-color: red;
+  z-index:150;
+  color:white;
+  text-align: center;
+  line-height: 42px;
+}
