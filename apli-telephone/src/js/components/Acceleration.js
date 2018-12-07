@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-=======
- 
 
 >>>>>>> master
 class Acceleration{
     constructor(){
         
-
         this.bindEvents();
         this.init();
     }
