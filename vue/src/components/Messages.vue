@@ -87,6 +87,7 @@ export default {
   overflow-y: scroll;
   text-align: center;
   padding: 8px;
+  margin: 8px;
 }
 
 .refresh {

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import example from '@/store/modules/example'
 import messages from '@/store/modules/messages'
 import dark from '@/store/modules/dark'
+import bpm from '@/store/modules/bpm'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
   modules: {
     example,
     messages,
-    dark
+    dark,
+    bpm
   }
 })
