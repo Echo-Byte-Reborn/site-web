@@ -8,19 +8,22 @@
 
     <title>News</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
-<body>
+
+<body class="body">
+    
     <div class="slider">
         <div class="page">
             <h1>santé</h1>
             <img class="cardio" src="./static/img/cardio.gif" alt="">
             <p><div class="bpm"></div></p>
             <p class="center">bpm</p>
-            <p>KM : <div class="kmFait">2,7Km</div></p>
+            <p><div class="kmFait">2,7</div></p>
+            <p class="center">km</p>
         </div>
         <div class="page">
             <h1>survie</h1>
@@ -41,6 +44,8 @@
     </div>
 <div class="buttonChatbot">X</div>
 
+<div class="btn-night">O</div>
+
     <iframe class="chatbot"
             allow="microphone;"
             width="350"
@@ -50,10 +55,18 @@
 	<script type="text/javascript" src="js/main.js"></script>
     <script>
         $(document).ready(function(){
-          $('.slider').slick({
-            arrows: false,
-          });
+            $('.slider').slick({
+                arrows: false,
+            });
+
+
+            $('.btn-night').click(function (){
+             $('.body').toggleClass('night')   
+          })
+          
         });
+        
     </script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

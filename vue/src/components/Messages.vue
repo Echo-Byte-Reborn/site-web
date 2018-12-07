@@ -1,5 +1,5 @@
 <template>
-  <v-layout row align-content-center>
+  <v-layout column row align-content-center>
     <v-flex xs12>
       <v-card
         max-height="600px"
@@ -25,6 +25,9 @@
         </v-list>
       </v-card>
     </v-flex>
+    <v-flex xs12 align-content-end class="refresh">
+      <v-btn @click="loadData">Rafraichir</v-btn>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -40,7 +43,7 @@ export default {
   props: {
   },
   mounted () {
-    this.$store.dispatch('loadMessages')
+    this.loadData()
   },
   data () {
     return {
@@ -55,6 +58,9 @@ export default {
     }
   },
   methods: {
+    loadData () {
+      this.$store.dispatch('loadMessages')
+    },
     getDate (timestamp) {
       return moment(timestamp).format('LLL')
     },
@@ -83,5 +89,8 @@ export default {
   padding: 8px;
 }
 
+.refresh {
+  text-align: end;
+}
 
 </style>

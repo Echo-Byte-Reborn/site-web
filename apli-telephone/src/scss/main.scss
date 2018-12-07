@@ -46,8 +46,63 @@ body{
 		text-align: center;
 		font-size: 3em;
 	}
+	.kmFait{
+		margin-top: 50px;
+		text-align: center;
+		font-size: 2em;
+	}
+	.cardio{
+		object-fit: cover;
+		height: 150px;
+		width: 100%
+	}
+}
+.btn-night{
+	color: $white;
+	background-color: $black;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	border-radius: 10px;
+	padding: 10px;
+	&:hover{
+		color: $black;
+		background-color: $white;
+	}
 }
 
+.night {
+	background-color: $black;
+	.page{
+		h1{
+			text-align: center;
+			padding: 10px 0;
+			color: $white !important; 
+			background-color: $black !important;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			padding: 10px 10px;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		}
+		p, .bpm{
+			padding: 0 10px;
+		}
+		.bpm{
+			text-align: center;
+			font-size: 3em;
+		}
+		.kmFait{
+			margin-top: 50px;
+			text-align: center;
+			font-size: 2em;
+		}
+		.cardio{
+			object-fit: cover;
+			height: 150px;
+			width: 100%
+		}
+	}
+}
 	
 
 
