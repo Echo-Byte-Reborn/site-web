@@ -15,7 +15,6 @@ const App = {
         this.initComponents();
         this.bindEvent();
         console.log(getBrowser());
-        new Example();
         new Acceleration ();
         new News();
     },
@@ -30,17 +29,7 @@ const App = {
 
     },
 
-    process(event) {
-        var x = event.accelerationIncludingGravity.x;
-        var y = event.accelerationIncludingGravity.y;
-        var z = event.accelerationIncludingGravity.z;
-        document.getElementById("log").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li><li>Z : " + z + "</li></ul>";
-      }
 
 };
-
-
-
-
 
 App.init();
